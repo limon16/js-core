@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 7</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #bebcbe;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        a{
+            display: flex;
+            width: 100px;
+            height: 50px;
+            background-color: bisque;
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 198px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            padding: 10px 8px;
+            resize: none;
+            margin-bottom: 10px;
+            color: #6c6c6c;
+            font-size: 18px;
+        }
+
+        .keyboard {
+            width: 1025px;
+            height: 557px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .key-row {
+            margin-bottom: 7px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .key-element {
+            background-color: #fff;
+            width: 63px;
+            height: 63px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .key:nth-child(14) {
+            width: 108px;
+        }
+
+        #Backspace,
+        #Tab {
+            width: 108px;
+        }
+
+        #CapsLock {
+            width: 123px;
+        }
+
+        #Enter {
+            width: 118px;
+        }
+
+        #ShiftLeft {
+            width: 147px;
+        }
+
+        #ShiftRight {
+            width: 166px;
+        }
+
+        #Space {
+            width: 1025px;
+        }
+
+        .active {
+            background-color: #7f7c7e;
+        }
+
+        span{
+            display: block;
+            position: relative;
+            top: -20px;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(93, 92, 92)
+        }
+
+        .active-caps{
+            background-color: rgb(244, 5, 5);
+        }
+
+        .no-active-caps{
+            background-color: rgb(93, 92, 92)
+        }
+
+    </style>
+</head>
+
+<body>
+    <a href="./index.html">Головна</a>
+    <div class="keyboard">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <div class="key-row">
+            <div class="key-element" id="Backquote">`</div>
+            <div class="key-element" id="Digit1">1</div>
+            <div class="key-element" id="Digit2">2</div>
+            <div class="key-element" id="Digit3">3</div>
+            <div class="key-element" id="Digit4">4</div>
+            <div class="key-element" id="Digit5">5</div>
+            <div class="key-element" id="Digit6">6</div>
+            <div class="key-element" id="Digit7">7</div>
+            <div class="key-element" id="Digit8">8</div>
+            <div class="key-element" id="Digit9">9</div>
+            <div class="key-element" id="Digit0">0</div>
+            <div class="key-element" id="Minus">-</div>
+            <div class="key-element" id="Equal">=</div>
+            <div class="key-element" id="Backspace">Backspace</div>
+        </div>
+        <div class="key-row">
+            <div class="key-element" id="Tab">Tab</div>
+            <div class="key-element" id="KeyQ">q</div>
+            <div class="key-element" id="KeyW">w</div>
+            <div class="key-element" id="KeyE">e</div>
+            <div class="key-element" id="KeyR">r</div>
+            <div class="key-element" id="KeyT">t</div>
+            <div class="key-element" id="KeyY">y</div>
+            <div class="key-element" id="KeyU">u</div>
+            <div class="key-element" id="KeyI">i</div>
+            <div class="key-element" id="KeyO">o</div>
+            <div class="key-element" id="KeyP">p</div>
+            <div class="key-element" id="BracketLeft">[</div>
+            <div class="key-element" id="BracketRight">]</div>
+            <div class="key-element" id="Backslash">\</div>
+        </div>
+        <div class="key-row">
+            <div class="key-element" id="CapsLock">
+                <span></span>
+                CapsLock</div>
+            <div class="key-element" id="KeyA">a</div>
+            <div class="key-element" id="KeyS">s</div>
+            <div class="key-element" id="KeyD">d</div>
+            <div class="key-element" id="KeyF">f</div>
+            <div class="key-element" id="KeyG">g</div>
+            <div class="key-element" id="KeyH">h</div>
+            <div class="key-element" id="KeyJ">j</div>
+            <div class="key-element" id="KeyK">k</div>
+            <div class="key-element" id="KeyL">l</div>
+            <div class="key-element" id="Semicolon">;</div>
+            <div class="key-element" id="Quote">'</div>
+            <div class="key-element" id="Enter">Enter</div>
+        </div>
+        <div class="key-row">
+            <div class="key-element" id="ShiftLeft">shift</div>
+            <div class="key-element" id="KeyZ">z</div>
+            <div class="key-element" id="KeyX">x</div>
+            <div class="key-element" id="KeyC">c</div>
+            <div class="key-element" id="KeyV">v</div>
+            <div class="key-element" id="KeyB">b</div>
+            <div class="key-element" id="KeyN">n</div>
+            <div class="key-element" id="KeyM">m</div>
+            <div class="key-element" id="Comma">,</div>
+            <div class="key-element" id="Period">.</div>
+            <div class="key-element" id="Slash">/</div>
+            <div class="key-element" id="ShiftRight">shift</div>
+        </div>
+        <div class="key-element" id="Space"></div>
+    </div>
+
+    <script src="./keyboard.js"></script>
+</body>
+
+</html>
