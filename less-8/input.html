@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Less 8</title>
+    <style>
+        .form-one {
+            display: flex;
+            width: 100%;
+            flex-wrap: nowrap;
+        }
+
+        input[type="button"] {
+            margin-left: 15px;
+            margin-right: 15px;
+            display: flex;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            /* font-size: 16px; */
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            height: 31px;
+        }
+
+        input {
+            display: flex;
+            width: 250px;
+            height: 28px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        .form-two input {
+            width: 785px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Task move</h2>
+    <p>Значення переміщується з одного інпута в інший тільки якщо там є значення</p>
+    <form class="form-one" name="formOne">
+        <input name="text" type="text">
+        <input name="move" type="button" value="move">
+        <input name="textTwo" type="text">
+    </form>
+
+    <hr>
+    <h2>Task placeholder</h2>
+    <p>Значення переміщується в placeholder тільки якщо там є значення</p>
+    <form class="form-two" name="formTwo">
+        <input name="textblur" placeholder="">
+    </form>
+    <script src="./input.js"></script>
+</body>
+
+</html>

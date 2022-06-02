@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Less 8</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            background-color: #3bb471;
+            padding: 12px;
+            color: #fff;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+
+        .box {
+            width: 500px;
+            height: 450px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            border: 1px solid #3bb471;
+            
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        label {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 50px;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        input {
+            display: flex;
+            height: 25px;
+            width: 100%;
+            border-radius: 5px;
+            /* padding-left: 5px; */
+        }
+
+        span {
+            display: flex;
+            height: 25px;
+            width: 100%;
+            margin-bottom: -10px;
+        }
+
+        input[type="text"]{
+            border: 1px solid gray;
+            padding-left: 8px;
+            margin-top: 5px;
+        }
+
+        label[for="male"] {
+            /* align-items: center; */
+            height: 25px;
+            flex-wrap: nowrap;
+        }
+
+        label[for="male"] span {
+            display: flex;
+            width: 10%;
+        }
+
+        input[type='radio'] {
+            height: 25px;
+            width: 15px;
+            display: flex;
+            margin-right: 5px;
+        }
+
+        label[for="check"] {
+            flex-wrap: nowrap;
+            display: flex;
+            align-items: flex-start;
+            height: 25px;
+        }
+
+        label[for="check"] label {
+            display: flex;
+            width: 100%;
+            height: 25px;
+        }
+
+        input[type="checkbox"] {
+            width: 10%;
+            width: 15px;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        input[name="singup"] {
+            justify-content: center;
+            background-color: #3bb471;
+            height: 40px;
+            border: none;
+            color: white;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            font-size: 18px;
+        }
+
+        select {
+            display: flex;
+            height: 25px;
+            width: 100%;
+            border-radius: 5px;
+            color: gray;
+
+            border: 1px solid gray;
+            padding-left: 5px;
+        }
+
+        label[for="Position"] span{
+            margin-bottom: 0px;
+        }
+
+        .container{
+            width: 500px;
+            height: 450px;
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid #3bb471;
+            margin: 0 auto;
+            justify-content: center;
+            visibility: hidden;
+        }
+
+        .header{
+            width: 100%;
+            height: 100px;
+            background-color: #3bb471;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 80px;
+        }
+
+        .footer{
+            width: 100%;
+            height: 60px;
+            background-color: #3bb471;
+            margin-bottom: -17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer img{
+            width: 40px;
+            height: 40px;
+        }
+
+        .icon{
+            margin-top: 50px;
+            display: flex;
+            border-radius: 50%;
+            padding: 10px;
+            background-color: #fff;
+            background-image: url('./img/man.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 120px;
+            width: 120px;
+            border: 10px solid white;
+        }
+
+        .container span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container span:nth-child(2){
+            font-size: 19px;
+            margin-bottom: -15px;
+        }
+
+        .container span:nth-child(3){
+            font-size: 15px;
+            margin-bottom: -5px;
+        }
+
+        .container span:nth-child(4){
+            margin-bottom: 15px;
+        }
+
+        .container input{
+            border: 1px solid #3bb471;
+            background-color: white;
+            color: #3bb471;
+            width: 100px;
+            height: 40px;
+            justify-content: center;
+            font-size: 15px;
+            margin-bottom: 15px;
+
+            cursor: pointer;
+        }
+
+        input:disabled {
+            filter: brightness(75%);
+        }
+
+        .male{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start
+        }
+
+
+
+        .male label{
+            height: 25px;
+            width: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Create your account</h1>
+        <form name="f1">
+            <label for="userFirstName">
+                <span>First Name: </span>
+                <input type="text" name="first" id="userFirst" placeholder="type here...">
+            </label>
+            <label for="userSecondName">
+                <span>Second Name: </span>
+                <input type="text" name="second" id="userSecont" placeholder="type here...">
+            </label>
+            <label for="userLogin">
+                <span>Email address: </span>
+                <input type="text" name="email" id="userLogin" placeholder="enter email">
+            </label>
+            <label for="male" class="male" onclick="changeMale()">
+                <input type="radio" name="male" id="man" value="man">
+                <label for="man">man</label>
+
+                <input type="radio" name="male" id="woman" value="woman">
+                <label for="woman">woman</label>
+            </label>
+            <label for="Position">
+                <span>Position: </span>
+                <select name="userPosition">
+                    <option value="choose" selected>Choose..</option>
+                    <option value="frontend">Frontend</option>
+                    <option value="backend">Backend</option>
+                    <option value="QC/QA">QC/QA</option>
+                </select>
+            </label>
+            <label for="check">
+                <input type="checkbox" name="check" id="textcheck">
+                <label for="textcheck">I agree all statements in Terms of service</label>
+            </label>
+            <input name="singup" type="button" value="Sign Up" disabled>
+            <!-- <button name="singup" type="button" disabled>Sign Up</button> -->
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <span class="icon">
+                
+            </span>
+        </div>
+        <span class="text" name="userName"></span>
+        <span class="text name="userEmail"></span>
+        <span class="text name="userPositionUse"></span>
+        <input type="button" value="Sign Out" onclick="singOut()">
+        <div class="footer">
+            <img src="./img/facebook.svg" alt="">
+            <img src="./img/git.svg" alt="">
+            <img src="./img/linkedin.svg" alt="">
+        </div>
+    </div>
+
+    <script src="./signup.js"></script>
+</body>
+
+</html>
