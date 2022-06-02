@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            height: 946px;
+        }
+
+        main {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, black 50%, white 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pencil {
+            margin-right: 100px;
+            background-image: url('./img/pencil.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 25px;
+            height: 100%;
+        }
+
+        .ipad {
+            background-image: url('./img/apple-ipad-pro-11-2018-medium.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: white;
+            width: 750px;
+            height: 540px;
+            border-radius: 38px;
+            display: flex;
+            align-items: center;
+        }
+
+        .brBlack {
+            height: 90.3%;
+            background-color: #131313;
+            width: 1%;
+        }
+
+        .task {
+            height: 100%;
+            width: 49.5%;
+        }
+
+        #list {
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 80%;
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        #list h2 {
+            width: 100%;
+        }
+
+        h2 {
+            color: crimson;
+            font-size: 17px;
+            font-weight: normal;
+        }
+
+        label {
+            display: flex;
+            width: 100%;
+            height: 20px;
+            align-items: center;
+
+            margin-top: 15px;
+        }
+
+        label span {
+            padding-left: 5px;
+        }
+
+        /* add task */
+
+        .newTask {
+            width: 49.5%;
+            height: 100%;
+        }
+
+        #addTask {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+
+            width: 93%;
+            height: 20%;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        #addTask h2 {
+            height: 50px;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        #addTask input {
+            width: 220px;
+            padding-bottom: 3px;
+            border: none;
+            border-bottom: 1px solid #30383b;
+            outline: none;
+            font-size: 15px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #addTask button {
+            width: 78px;
+            height: 38px;
+
+            margin-top: 16px;
+            background-color: #30383b;
+            color: #fcfcfc;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:focus {
+            box-shadow: 1px 1px 2px 2px #B6B6B6, -1px -1px 2px 2px #B6B6B6;
+        }
+
+        .modal {
+            display: none;
+            width: 600px;
+            height: 80px;
+            padding: 20px;
+            background-color: #F5D5D6;
+            color: #5C1B17;
+            border-radius: 5px;
+            font-size: 14px;
+            position: absolute;
+            top: 300px;
+            left: 130px;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        .modal>div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .modal .uil {
+            font-size: 18px;
+            color: #AD7C80;
+            cursor: pointer;
+        }
+
+        .modal .uil:hover {
+            color: #30383b;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="pencil">
+        </div>
+        <div class="ipad">
+            <div class="task">
+                <form name="list" id="list">
+                    <h2>Список завдань</h2>
+
+                    <label for="">
+                        <input type="checkbox" name="point">
+                        <span class="left">HTML5</span>
+                    </label>
+
+                    <label for="">
+                        <input type="checkbox" name="point">
+                        <span class="left">CSS3</span>
+                    </label>
+
+                    <label for="">
+                        <input type="checkbox" name="point">
+                        <span class="left">SASS/SCSS</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="point">
+                        <span class="left">Bootstrap</span>
+                    </label>
+                </form>
+            </div>
+
+            <div class="brBlack"></div>
+
+            <div class="newTask">
+                <form name="add" id="addTask">
+                    <h2>Додати нове завдання</h2>
+                    <span><input type="text" name="text"></span>
+                    <button type="button" name="button">додати</button>
+                </form>
+            </div>
+        </div>
+        <div class="modal" id="modal1">
+            <div>
+                <h3>Попередження!</h3>
+                <i class="uil uil-times" onclick="clouseModal()"></i>
+            </div>
+            <p>Пусте поле не можна добавити.</p>
+        </div>
+
+        <div class="modal" id="modal2">
+            <div>
+                <h3>Попередження!</h3>
+                <i class="uil uil-times" onclick="clouseModal()"></i>
+            </div>
+            <p>Останній таск зі списку Ви не можете видалити.</p>
+        </div>
+    </main>
+
+
+    <script src="./todo.js"></script>
+</body>
+
+</html>

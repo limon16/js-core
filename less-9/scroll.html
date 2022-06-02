@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Less 9 One</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: lightgrey;
+            width: 100%;
+            height: 720px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 100%;
+
+            padding: 140px 80px;
+            height: 720px;
+        }
+
+        p {
+            font-size: 40px;
+        }
+
+        main hr {
+            width: 260px;
+            height: 7px;
+            margin-top: 30px;
+            background-color: red;
+            border: none;
+        }
+
+        img {
+            margin-top: 100px;
+            float: right;
+        }
+
+        footer {
+            background-color: lightgrey;
+            width: 100%;
+            height: 720px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+        }
+
+        h2:hover {
+            color: firebrick;
+            cursor: pointer;
+        }
+        h2{
+            font-size: 30px;
+        }
+
+        footer h2{
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Scroll Down</h2>
+    </header>
+    <main>
+        <div class="blockOne">
+            <p>"Slide from left"</p>
+            <hr>
+        </div>
+        
+        <img src="https://ihospital.pl/wp-content/uploads/2018/05/wood-3157395_1920-e1539599410241-1016x675.jpg" alt="" width="500px">
+    </main>
+    <footer>
+        <h2>Scroll up</h2>
+    </footer>
+
+    <script src="./scroll.js"></script>
+</body>
+
+</html>
