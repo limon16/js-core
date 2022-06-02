@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Less 10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">+
+
+        <div class="box-top box ">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="box-middle ">
+            <input type="button" value="edit" class="btn-edit btn">
+            <input type="button" value="style" class="btn-style btn">
+        </div>
+
+        <div class="box-bottom box ">
+            <div class="edit-block hide">
+                <textarea class="edit-area"></textarea>
+                <input type="button" value="add" class="btn-add btn">
+                <input type="button" value="save" class="btn-save btn">
+            </div>
+
+            <div class="style-block hide">
+                <form>
+                    <div class="form-size">
+                        <h3>Font Size</h3>
+                        <input type="radio" name="size" value="12px" id="12px">
+                        <label for="12px">12px</label>
+
+                        <input type="radio" name="size" value="14px" id="14px">
+                        <label for="14px">14px</label>
+
+                        <input type="radio" name="size" value="16px" id="16px">
+                        <label for="16px">16px</label>
+
+                        <input type="radio" name="size" value="18px" id="18px">
+                        <label for="18px">18px</label>
+
+                        <input type="radio" name="size" value="20px" id="20px">
+                        <label for="20px">20px</label>
+                    </div>
+
+                    <div class="form-family">
+                        <h3>Font Family</h3>
+                        <select id="fontFamily">
+                            <option value="">Choose option</option>
+                            <option value="cursive">cursive</option>
+                            <option value="fantasy">fantasy</option>
+                            <option value="monospace">monospace</option>
+                            <option value="sans-serif">sans-serif</option>
+                        </select>
+                    </div>
+
+                    <div class="form-colors">
+                        <h3>Colors</h3>
+
+                        <input type="button" value="Color of Text" class="btn-color-text">
+                        <input type="button" value="Background color" class="btn-color-bg">
+
+                        <div class="box-color hide">
+                            <div class="color"></div>
+                            <div class="color"></div>
+                            <div class="color"></div>
+                            <div class="color"></div>
+                            <div class="color"></div>
+                            <div class="color"></div>
+                            <div class="color"></div>
+                            <div class="color"></div>
+                            <div class="color"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-style">
+                        <h3>Style</h3>
+                        <input type="checkbox" name="bold" id="text-bold">
+                        <label for="text-bold">Bold text</label>
+                        <input type="checkbox" name="italic" id="text-cursive">
+                        <label for="text-cursive">Cursive text</label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="table-list box hide">
+
+            <div class="form-create">
+                <h3>Choose what you want</h3>
+                <input type="radio" name="table" value="table" id="table">
+                <label for="table">table</label>
+
+                <input type="radio" name="list" value="list" id="list">
+                <label for="list">list</label>
+            </div>
+
+            <form name="table-create" class="table-create hide">
+
+                <div class="create-table ">
+                    <span>Count TR:</span><textarea class="num-tr" placeholder="Count TR:"></textarea>
+                    <span>Count TD:</span><textarea class="num-td" placeholder="Count TD:"></textarea>
+                </div>
+
+                <h3>Add style yo your table</h3>
+                <div class="style-table ">
+                    <span>Width of TD:</span><textarea class="widht-td" placeholder="Count TR:"></textarea>
+                    <span>Height of TD:</span><textarea class="height-td" placeholder="Count TD:"></textarea>
+                </div>
+
+                <div class="style-border">
+
+                    <span>Width of border:</span><textarea class="widht-border" placeholder="Width:"></textarea>
+
+                    <span>Type of border:</span>
+                    <select name="typeBorder">
+                        <option value="dotted">dotted</option>
+                        <option value="dashed">dashed</option>
+                        <option value="solid">solid</option>
+                        <option value="double">double</option>
+                        <option value="none">none</option>
+                        <option value="hidden">hidden</option>
+                    </select>
+
+                    <span>Color of border:</span>
+                    <select name="colorBorder">
+                        <option value="black">black</option>
+                        <option value="red">red</option>
+                        <option value="blue">blue</option>
+                        <option value="green">green</option>
+                    </select>
+                </div>
+
+                <input type="button" value="Create table" class="btn-create-table btn">
+            </form>
+
+            <form name="list-create" class="create-list hide">
+
+                    <span>Count Li:</span>
+                    <textarea class="count-li" placeholder="Count Li:"></textarea>
+
+                    <span>Type of marks:</span>
+                    <select name="typeList">
+                        <option value="disc">disc</option>
+                        <option value="circle">circle</option>
+                        <option value="square">square</option>
+                    </select>
+
+                    <input type="button" value="Create list" class="btn-create-list btn">
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
