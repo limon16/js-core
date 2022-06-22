@@ -20,11 +20,10 @@ setInterval(() => {
 
 
 let day = 0, hh = 0, mm = 0, ss = 0, ms;
-let startTime = Date.now();
 let timeID;
 
 getS('.btn-start-sec').addEventListener('click', () => {
-
+    let startTime = Date.now();
     timeID = setInterval(function init() {
         let elapsedTime = Date.now() - startTime;
         let ms = (elapsedTime/1000).toFixed(3);
