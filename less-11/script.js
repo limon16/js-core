@@ -3,6 +3,13 @@
 const getS = selector => document.querySelector(selector);
 const addTime = (num) => num < 10 ? `0${num}` : `${num}`;
 
+const addTimeS = (num) =>
+        num < 10 ? `00${num}` :
+        num > 10 &&  num < 99 ? `0${num}`  :
+        num > 99 ? `${num}`  :
+        `${num}`;
+
+
 setInterval(() => {
     let date = new Date();
 
@@ -28,9 +35,7 @@ getS('.btn-start-sec').addEventListener('click', () => {
         let elapsedTime = Date.now() - startTime;
         let ms = (elapsedTime/1000).toFixed(3);
         ss = ms.toString().slice(0, ms.indexOf("."));
-        ms = ms.toString().slice(ms.indexOf(".")+1);
-        console.log(ss);
-        //console.log(ss);
+        ms = +ms.toString().slice(ms.indexOf(".")+1);
         if(ss >= 60) {
             mm++;
             ss -= 60;
@@ -44,11 +49,15 @@ getS('.btn-start-sec').addEventListener('click', () => {
             hh -= 24;
         }
 
-        getS('.sec').innerHTML = (addTime(day) + ':' + addTime(hh) + ':' + addTime(mm) + ':' + addTime(ss) + ':' + (ms));
+        getS('.sec').textContent = (addTime(day) + ':' + addTime(hh) + ':' + addTime(mm) + ':' + addTime(ss) + ':' + addTimeS(ms));
     }, 100);
 
 })
 
 getS('.btn-stop-sec').onclick = function () {
     clearInterval(timeID)
+}
+
+getS('.btn-loop-sec').onclick = function () {
+    getS('.result-box').innerHTML += `<span class="result">${getS('.sec').textContent}</span>`;
 }
