@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        @font-face {
+            font-family: 'ds-digi';
+            src: url('./fonts/DS-DIGI.TTF');
+        }
+
+        @font-face {
+            font-family: 'ds-digib';
+            src: url('./fonts/DS-DIGIB.TTF');
+        }
+
+        body {
+            background-color: black;
+            font-family: ds-digi;
+            text-transform: uppercase;
+            color: #247691;
+        }
+
+        .box {
+            width: 100%;
+            box-shadow: 0 0 4px 0 #247691;
+            height: 180px;
+            background-color: #010216;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .top-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .fullDate,
+        .fullTime {
+            display: flex;
+            justify-content: center;
+        }
+
+        .fullDate {
+            align-items: flex-end;
+            font-size: 35px;
+        }
+
+        .fullTime {
+            align-items: flex-start;
+            font-size: 85px;
+        }
+
+        /*   середній блок       */
+        .middle-block {
+            margin: 30px 0;
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        .sec {
+            font-size: 75px;
+
+        }
+
+        input {
+            background-color: #010216;
+            color: #247691;
+
+            border: none;
+            box-shadow: 0 0 2px 0 #247691;
+            border-radius: 5px;
+            width: 60px;
+            height: 30px;
+
+            font-size: 18px;
+            font-family: ds-digi;
+            text-transform: uppercase;
+
+            cursor: pointer;
+        }
+
+        .btn {
+            margin-right: 5px;
+        }
+
+        .sec-box {
+            width: 50%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .result-box {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+
+            width: 50%;
+            height: 80%;
+
+            box-shadow: 0px 0px 2px 0px #247691;
+            box-shadow: inset 0px 0px 3px 0px #247691;
+
+            border-radius: 5px;
+        }
+
+        .result {
+            font-size: 30px;
+        }
+
+        /*   останій блок       */
+
+        .timer {
+            width: 50%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timer-start span:nth-child(1),
+        .timer-end span:nth-child(1) {
+            font-size: 80px;
+        }
+
+        .timer-start span:nth-child(2) {
+            font-size: 20px;
+            margin-bottom: 15px;
+            margin-top: -5px;
+        }
+
+        .timer-end span:nth-child(1) {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-block box">
+        <span class="fullDate"></span>
+        <span class="fullTime"></span>
+    </div>
+
+    <div class="middle-block box">
+        <div class="sec-box">
+            <span class="sec">00:00:00:00:000</span>
+            <span>
+                <input class="btn-start-sec btn" type="button" value="start">
+                <input class="btn-loop-sec btn" type="button" value="loop">
+                <input class="btn-stop-sec btn" type="button" value="stop">
+                <input class="btn-reset-sec" type="button" value="reset">
+            </span>
+        </div>
+
+        <div class="sec-box">
+            <div class="result-box">
+                <span class="result">00:00:00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-block box">
+        <div class="timer timer-start">
+            <span>00</span>
+            <span>minutes</span>
+            <div>
+                <input class="btn-plus-timer btn" type="button" value="+">
+                <input class="btn-minus-timer" type="button" value="-">
+            </div>
+        </div>
+        <div class="timer timer-end">
+            <span>00:00</span>
+            <div>
+                <input class="btn-start-timer btn" type="button" value="start">
+                <input class="btn-stop-timer btn" type="button" value="stop">
+                <input class="btn-reset-timer" type="button" value="reset">
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
