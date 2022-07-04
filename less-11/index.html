@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Less 11</title>
+    <title>Document</title>
     <style>
         * {
             margin: 0;
@@ -74,7 +74,7 @@
 
         .sec {
             font-size: 75px;
-
+            display: flex;
         }
 
         input {
@@ -111,7 +111,7 @@
 
         .result-box {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
             flex-direction: column;
 
@@ -126,6 +126,17 @@
 
         .result {
             font-size: 30px;
+            width: 50%;
+        }
+
+        .sec-num{
+            display: flex;
+            width: 75px;
+            height: 70px;
+        }
+
+        .sec-num:nth-child(5){
+            width: 120px;
         }
 
         /*   останій блок       */
@@ -154,6 +165,10 @@
         .timer-end span:nth-child(1) {
             margin-bottom: 30px;
         }
+
+        .inactive{
+            opacity: .6;
+        }
     </style>
 </head>
 
@@ -166,7 +181,9 @@
 
     <div class="middle-block box">
         <div class="sec-box">
-            <span class="sec">00:00:00:00:000</span>
+            <div class="sec">
+                <span class="sec1 sec-num">00</span>:<span class="sec2 sec-num">00</span>:<span class="sec3 sec-num">00</span>:<span class="sec4 sec-num">00</span>:<span class="sec5 sec-num">000</span>
+            </div>
             <span>
                 <input class="btn-start-sec btn" type="button" value="start">
                 <input class="btn-loop-sec btn" type="button" value="loop">
@@ -184,7 +201,7 @@
 
     <div class="bottom-block box">
         <div class="timer timer-start">
-            <span>00</span>
+            <span class="timer-back">25</span>
             <span>minutes</span>
             <div>
                 <input class="btn-plus-timer btn" type="button" value="+">
@@ -192,7 +209,7 @@
             </div>
         </div>
         <div class="timer timer-end">
-            <span>00:00</span>
+            <span class="timer-back-start"><span class="minEnd-one">00</span>:<span class="minEnd-two">00</span></span>
             <div>
                 <input class="btn-start-timer btn" type="button" value="start">
                 <input class="btn-stop-timer btn" type="button" value="stop">
